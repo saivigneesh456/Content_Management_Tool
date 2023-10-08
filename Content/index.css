@@ -78,18 +78,6 @@ header {
     background-color: #0056b3;
 }
 
-/* Footer styles */
-footer {
-    background-color: transparent;
-    color: #ffffff;
-    text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-
 /* Edit and delete button styles */
 .blog-post button {
     margin-top: 10px;
@@ -101,13 +89,6 @@ footer {
     border-color: #007bff;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
-
-/* Add your custom styles here */
-.post-date {
-    font-size: 12px;
-    color: #888;
-}
-
 /* Add your custom styles here */
 .post-date {
     font-size: 12px;

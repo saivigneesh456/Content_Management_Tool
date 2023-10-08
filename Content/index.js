@@ -17,10 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const content = document.getElementById('new-content').value;
         const image = document.getElementById('new-image').value;
         const video = document.getElementById('new-video').value;
-
-        // Get current date and time
-        const currentDate = new Date();
-        const formattedDate = `${currentDate.toDateString()} ${currentDate.toLocaleTimeString()}`;
+        const currentDate = new Date().toLocaleString();
 
         const blogPost = document.createElement('div');
         blogPost.className = 'blog-post';
@@ -33,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const postDate = document.createElement('span');
         postDate.className = 'post-date';
-        postDate.textContent = `Posted on ${formattedDate}`;
+        postDate.textContent = `Posted on: ${currentDate}`;
 
         const postImage = document.createElement('img');
         postImage.src = image;
@@ -60,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         blogPost.appendChild(postTitle);
         blogPost.appendChild(postContent);
-        blogPost.appendChild(postDate); // Add post date to the blog post
+        blogPost.appendChild(postDate);
         blogPost.appendChild(postImage);
         blogPost.appendChild(postVideo);
         blogPost.appendChild(editButton);
@@ -87,17 +84,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const content = document.getElementById('new-content').value;
             const image = document.getElementById('new-image').value;
             const video = document.getElementById('new-video').value;
+            const currentDate = new Date().toLocaleString();
 
-            // Update post's content
             const postTitle = editingPost.querySelector('h2');
             const postContent = editingPost.querySelector('p');
-            const postDate = editingPost.querySelector('.post-date'); // Select post date element
+            const postDate = editingPost.querySelector('.post-date');
             const postImage = editingPost.querySelector('img');
             const postVideo = editingPost.querySelector('iframe');
 
             postTitle.textContent = title;
             postContent.textContent = content;
-            postDate.textContent = `Posted on ${getCurrentFormattedDate()}`; // Update post date
+            postDate.textContent = `Posted on: ${currentDate}`;
             postImage.src = image;
             postImage.alt = 'Blog Post Image';
             postVideo.src = video;
@@ -115,10 +112,5 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('new-content').value = '';
         document.getElementById('new-image').value = '';
         document.getElementById('new-video').value = '';
-    }
-
-    function getCurrentFormattedDate() {
-        const currentDate = new Date();
-        return `${currentDate.toDateString()} ${currentDate.toLocaleTimeString()}`;
     }
 });
